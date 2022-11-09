@@ -16,7 +16,7 @@ export const createAttendeeCollection = async (
       schemaVersion: "1.0.0",
       // collection image
       coverPicture: {
-        url: "https://ipfs.uniquenetwork.dev/ipfs/QmTfW8ao3QztNfFcLqniF1REzSZS8Gvj4Qa2k5e7fyo6WT",
+        url: "https://ipfs.uniquenetwork.dev/ipfs/QmUpNzjmAnnrrYgtLeWC6UEPaH2c37nzuhiU6UiwYq5pSW",
       },
       // template that can be used for tokens (will replace "infix" with token id in token.image)
       image: {
@@ -61,7 +61,7 @@ export const createAttendeeCollection = async (
     ],
     permissions: {
       nesting: {
-        tokenOwner: true,
+        tokenOwner: true, // default false
       },
     },
   });
@@ -88,6 +88,8 @@ export const createAttendeeTokens = async (
     if (toCreate > perBulk) toCreate = perBulk;
     const tokensToCreate = [...new Array(toCreate)].map((_, index) => {
       return {
+        // we can mint on some one else address
+        // owner: 'yGCyN3eydMkze4EPtz59Tn7obwbUbYNZCz48dp8FRdemTaLwm',
         data: {
           image: {
             url: `https://ipfs.unique.network/ipfs/Qmap7uz7JKZNovCdLfdDE3p4XA6shghdADS7EsHvLjL6jT/nft_image_${index}.png`,

@@ -42,8 +42,11 @@ const main = async () => {
   );
 
   // Create participation tokens
+  const participationTokensCount = await sdk.collections.lastTokenId({
+    collectionId: participationCollectionId,
+  });
   await createParticipationTokens(sdk, address, participationCollectionId, 10);
-  await rl(`Created participation tokens`);
+  await rl(`Created ${participationTokensCount.tokenId} participation tokens\nPress any key to continue...`);
 
   // TODO: make a distinct difference between token id and token id
   // Lets nest a single participation token into a attendee token
@@ -65,7 +68,12 @@ const main = async () => {
   await rl(
     `Nested token from collection: ${participationCollectionId} with id: ${participationTokenId} into token of collection: ${attendeeCollectionId} with id: ${attendeeTokenId}\nPress any key to continue...`
   );
+  // const recepient = 'yGCyN3eydMkze4EPtz59Tn7obwbUbYNZCz48dp8FRdemTaLwm';
+  // we can also send token to some else like this
+  // await sdk.tokens.transfer.submitWaitResult({ address, collectionId: attendeeCollectionId, tokenId: 1, to: recepient })
+  // await rl(`Transfered ${1} from collection ${attendeeCollectionId} to ${recepient}\nPress any key to continue...`)
 };
+
 
 // Lets check if it is actually nested
 

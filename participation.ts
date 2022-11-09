@@ -9,7 +9,7 @@ export const createParticipationCollection = async (sdk: Client, address: string
     schema: {
       schemaName: "unique",
       schemaVersion: "1.0.0",
-      coverPicture: { // TODO: different picture plz
+      coverPicture: {
         url: "https://ipfs.uniquenetwork.dev/ipfs/QmTfW8ao3QztNfFcLqniF1REzSZS8Gvj4Qa2k5e7fyo6WT",
       },
       image: {
