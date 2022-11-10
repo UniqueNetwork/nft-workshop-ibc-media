@@ -95,7 +95,7 @@ export const createAttendeeTokens = async (
             url: `https://ipfs.unique.network/ipfs/Qmap7uz7JKZNovCdLfdDE3p4XA6shghdADS7EsHvLjL6jT/nft_image_${index}.png`,
           },
           // make sure to follow the schema from collection. Order matters
-          attributes: {
+          encodedAttributes: {
             0: {
               _: `Name: ${index}`,
             },

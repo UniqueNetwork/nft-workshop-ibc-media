@@ -58,7 +58,7 @@ export const createParticipationTokens = async (
           image: {
             url: `https://ipfs.uniquenetwork.dev/ipfs/QmTfW8ao3QztNfFcLqniF1REzSZS8Gvj4Qa2k5e7fyo6WT`
           },
-          attributes: {
+          encodedAttributes: {
             0: { 
               _: `Awesome event!`
             }
